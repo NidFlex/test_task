@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 220 15% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 25%;
+
+    --primary: 0 79% 63%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 220 15% 25%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --accent: 45 100% 51%;
+    --accent-foreground: 220 15% 25%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 0 79% 63%;
+
+    --radius: 0.5rem;
+    
+    --yellow-bg: 45 100% 51%;
+    --price-red: 0 79% 63%;
+    
+    --category-marketing: 174 72% 56%;
+    --category-management: 217 91% 60%;
+    --category-hr: 25 95% 53%;
+    --category-design: 340 82% 52%;
+    --category-development: 262 83% 58%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 15% 25%;
+    --sidebar-primary: 220 15% 25%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 220 15% 25%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 0 79% 63%;
+  }
+
+  .dark {
+    --background: 220 15% 15%;
+    --foreground: 0 0% 98%;
+
+    --card: 220 15% 15%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 220 15% 15%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 79% 63%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 220 15% 20%;
+    --muted-foreground: 220 9% 65%;
+
+    --accent: 45 100% 51%;
+    --accent-foreground: 220 15% 15%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 0 79% 63%;
+    
+    --sidebar-background: 220 15% 10%;
+    --sidebar-foreground: 0 0% 96%;
+    --sidebar-primary: 0 79% 63%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 15% 16%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 220 15% 16%;
+    --sidebar-ring: 0 79% 63%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+}
+
+@layer utilities {
+  .yellow-gradient-bg {
+    background: radial-gradient(circle at center, hsl(45 100% 51%) 0%, hsl(45 100% 51%) 20%, hsl(45 100% 47%) 40%, hsl(45 100% 43%) 60%, hsl(45 100% 39%) 80%, hsl(45 100% 35%) 100%);
+    position: relative;
+  }
+  
+  .yellow-gradient-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at center, transparent 30%, hsl(45 100% 45% / 0.1) 30%, hsl(45 100% 45% / 0.1) 31%, transparent 31%),
+      radial-gradient(circle at center, transparent 45%, hsl(45 100% 40% / 0.1) 45%, hsl(45 100% 40% / 0.1) 46%, transparent 46%),
+      radial-gradient(circle at center, transparent 60%, hsl(45 100% 35% / 0.1) 60%, hsl(45 100% 35% / 0.1) 61%, transparent 61%);
+  }
+  
+  .course-card {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-2;
+  }
+  
+  .filter-tab {
+    @apply transition-all duration-200 hover:text-primary;
+  }
+  
+  .filter-tab-active {
+    @apply text-primary border-b-2 border-primary;
+  }
+  
+  .dots-pattern {
+    background-image: radial-gradient(circle, hsl(45 100% 51% / 0.3) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
